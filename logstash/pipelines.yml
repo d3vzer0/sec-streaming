@@ -1,0 +1,13 @@
+# Logstash Pipeline config
+# Create an entry for each Intel Source
+
+# Intel sources
+- pipeline.id: sec_sources_vulnerabilities_nvd
+  path.config: "/opt/logstash/pipelines/sources/nvd/"
+  pipeline.workers: 1
+
+
+# No need to change, default output / transformers
+- pipeline.id: sec_outputs_elasticsearch
+  path.config: "/opt/logstash/pipelines/output/elasticsearch/"
+  pipeline.workers: 1
